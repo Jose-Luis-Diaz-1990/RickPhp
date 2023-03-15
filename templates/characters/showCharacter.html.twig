@@ -1,0 +1,24 @@
+{% extends 'characters/baseCharacter.html.twig' %}
+
+  {% block contenido %}
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h2>{{ character.nombre }} Nº {{ character.codigo }}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><img src="{{ character.imagen }}" /></div>
+        <div class="col">
+          <div class="row"><div class="col">{{ character.estado }}</div></div>
+          <div class="row">
+          <ul>
+              {% for localizacion in character.localizaciones %}
+                <li>{{ localizacion.localizacion }}</li>
+              {% endfor %} 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
